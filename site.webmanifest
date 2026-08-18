@@ -1,0 +1,21 @@
+{
+  "name": "Espetoria",
+  "short_name": "Espetoria",
+  "description": "Restaurante em Cachoeiras de Macacu — buffet, carnes, pizzas e coquetéis.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf9f7",
+  "theme_color": "#3d2c1e",
+  "icons": [
+    {
+      "src": "icons/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
