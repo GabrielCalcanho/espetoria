@@ -10,48 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
-  const mobileBackdrop = document.querySelector('.mobile-backdrop');
-  const mobileClose = document.querySelector('.mobile-nav-close');
-
-  function openMenu() {
-    if (!mobileNav) return;
-    mobileNav.classList.add('open');
-    menuToggle?.classList.add('active');
-    menuToggle?.setAttribute('aria-expanded', 'true');
-    if (mobileBackdrop) {
-      mobileBackdrop.hidden = false;
-      requestAnimationFrame(() => mobileBackdrop.classList.add('open'));
-    }
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenu() {
-    if (!mobileNav) return;
-    mobileNav.classList.remove('open');
-    menuToggle?.classList.remove('active');
-    menuToggle?.setAttribute('aria-expanded', 'false');
-    if (mobileBackdrop) {
-      mobileBackdrop.classList.remove('open');
-      setTimeout(() => { mobileBackdrop.hidden = true; }, 300);
-    }
-    document.body.style.overflow = '';
-  }
-
   if (menuToggle && mobileNav) {
     menuToggle.addEventListener('click', () => {
-      if (mobileNav.classList.contains('open')) closeMenu();
-      else openMenu();
+      const isOpen = mobileNav.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-
-    mobileClose?.addEventListener('click', closeMenu);
-    mobileBackdrop?.addEventListener('click', closeMenu);
-
     mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => closeMenu());
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileNav.classList.contains('open')) closeMenu();
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
     });
   }
 
