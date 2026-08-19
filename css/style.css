@@ -289,6 +289,12 @@ ul, ol { list-style: none; }
   width: 100%;
 }
 
+.nav-actions {
+  display: none;
+  align-items: center;
+  gap: 20px;
+}
+
 .nav-instagram {
   display: none;
   align-items: center;
@@ -481,6 +487,7 @@ ul, ol { list-style: none; }
 
 @media (min-width: 992px) {
   .nav-links { display: flex; }
+  .nav-actions { display: flex; }
   .nav-instagram { display: flex; }
   .menu-toggle { display: none; }
   .mobile-nav,
