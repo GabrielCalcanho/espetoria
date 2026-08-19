@@ -523,46 +523,49 @@ ul, ol { list-style: none; }
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 0 24px;
+  padding: 0 20px;
   max-width: 680px;
+  width: 100%;
 }
 
 .hero-eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.28em;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   font-weight: 500;
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(3.5rem, 12vw, 6.5rem);
+  font-size: clamp(2.4rem, 11vw, 6.5rem);
   font-weight: 400;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  line-height: 0.92;
+  line-height: 0.95;
   margin-bottom: 0;
   text-shadow: 0 4px 40px rgba(0,0,0,0.35);
+  max-width: 100%;
+  word-break: keep-all;
 }
 
 .hero-divider {
   width: 48px;
   height: 1px;
   background: var(--color-accent);
-  margin: 28px auto;
+  margin: 22px auto;
   opacity: 0.85;
 }
 
 .hero-subtitle {
-  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  font-size: clamp(0.8rem, 2.2vw, 1.05rem);
   color: rgba(245, 242, 235, 0.88);
   font-weight: 300;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 48px;
-  line-height: 1.6;
+  margin-bottom: 36px;
+  line-height: 1.55;
 }
 
 /* CTA único, elegante — não parece botão de formulário */
@@ -1260,6 +1263,59 @@ ul, ol { list-style: none; }
 @media (max-width: 374px) {
   .container { padding: 0 16px; }
   .section { padding: 72px 0; }
+}
+
+/* Hero em telas estreitas (Moto G4, etc.) */
+@media (max-width: 400px) {
+  .hero-content {
+    padding: 0 16px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 13vw, 3rem);
+    letter-spacing: 0.08em;
+  }
+
+  .hero-divider {
+    margin: 18px auto;
+  }
+
+  .hero-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+  }
+
+  .hero-scroll {
+    bottom: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    letter-spacing: 0.16em;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    margin-bottom: 28px;
+  }
+
+  .hero-divider {
+    margin: 28px auto;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 48px;
+    letter-spacing: 0.12em;
+  }
 }
 
 @media (min-width: 1400px) {
