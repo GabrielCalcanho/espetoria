@@ -215,6 +215,16 @@ ul, ol { list-style: none; }
   box-shadow: 0 1px 0 var(--color-border);
 }
 
+.navbar.menu-open .logo {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.navbar .logo {
+  transition: opacity 0.2s ease;
+}
+
 .navbar .container {
   display: flex;
   align-items: center;
@@ -298,8 +308,9 @@ ul, ol { list-style: none; }
   gap: 5px;
   width: 28px;
   height: 28px;
-  z-index: 1001;
+  z-index: 1102;
   padding: 0;
+  position: relative;
 }
 
 .menu-toggle span {
@@ -328,7 +339,7 @@ ul, ol { list-style: none; }
 .mobile-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 998;
+  z-index: 1100;
   background: rgba(0, 0, 0, 0.55);
   opacity: 0;
   visibility: hidden;
@@ -349,7 +360,7 @@ ul, ol { list-style: none; }
   right: 0;
   bottom: 0;
   width: min(320px, 88vw);
-  z-index: 999;
+  z-index: 1101;
   background: #121212;
   border-left: 1px solid var(--color-border);
   display: flex;

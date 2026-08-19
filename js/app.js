@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNav.classList.add('open');
     menuToggle?.classList.add('active');
     menuToggle?.setAttribute('aria-expanded', 'true');
+    navbar?.classList.add('menu-open');
     if (mobileBackdrop) {
       mobileBackdrop.hidden = false;
       requestAnimationFrame(() => mobileBackdrop.classList.add('open'));
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNav.classList.remove('open');
     menuToggle?.classList.remove('active');
     menuToggle?.setAttribute('aria-expanded', 'false');
+    navbar?.classList.remove('menu-open');
     if (mobileBackdrop) {
       mobileBackdrop.classList.remove('open');
       setTimeout(() => { mobileBackdrop.hidden = true; }, 300);
