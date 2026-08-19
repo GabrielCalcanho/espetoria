@@ -515,7 +515,18 @@ ul, ol { list-style: none; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.35) 45%, rgba(10,10,10,0.82) 100%);
+    linear-gradient(
+      to bottom,
+      rgba(8, 8, 8, 0.72) 0%,
+      rgba(8, 8, 8, 0.45) 35%,
+      rgba(8, 8, 8, 0.55) 55%,
+      rgba(8, 8, 8, 0.88) 100%
+    ),
+    radial-gradient(
+      ellipse 70% 55% at 50% 45%,
+      rgba(8, 8, 8, 0.35) 0%,
+      rgba(8, 8, 8, 0.75) 100%
+    );
   z-index: 1;
 }
 
@@ -535,6 +546,7 @@ ul, ol { list-style: none; }
   color: var(--color-accent);
   margin-bottom: 20px;
   font-weight: 500;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
 }
 
 .hero-title {
@@ -545,7 +557,11 @@ ul, ol { list-style: none; }
   text-transform: uppercase;
   line-height: 0.95;
   margin-bottom: 0;
-  text-shadow: 0 4px 40px rgba(0,0,0,0.35);
+  color: #faf8f5;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.85),
+    0 8px 32px rgba(0, 0, 0, 0.55),
+    0 0 60px rgba(0, 0, 0, 0.35);
   max-width: 100%;
   word-break: keep-all;
 }
@@ -560,12 +576,13 @@ ul, ol { list-style: none; }
 
 .hero-subtitle {
   font-size: clamp(0.8rem, 2.2vw, 1.05rem);
-  color: rgba(245, 242, 235, 0.88);
+  color: rgba(245, 242, 235, 0.92);
   font-weight: 300;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 36px;
   line-height: 1.55;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.75);
 }
 
 /* CTA único, elegante — não parece botão de formulário */
@@ -577,9 +594,10 @@ ul, ol { list-style: none; }
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: #faf8f5;
   padding-bottom: 6px;
-  border-bottom: 1px solid rgba(245, 242, 235, 0.45);
+  border-bottom: 1px solid rgba(245, 242, 235, 0.55);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
   transition: color var(--transition), border-color var(--transition), gap var(--transition);
 }
 
